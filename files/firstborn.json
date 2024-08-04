@@ -273,8 +273,18 @@
                     "Crit": []
                 }
             ],
-            "Abilities": [],
-            "Unique_Actions": []
+            "Abilities": [
+                {
+                    "Name": "Hasteful Assault",
+                    "Desc": "After this unit fight in combat in which it incapacities an enemy operative, you may move this operative up to <img class='f3'>. This move may end within Engagement Range of an enemy operative."
+                }
+            ],
+            "Unique_Actions": [
+                {
+                    "Name": "Hammer of Wrath (2AP):",
+                    "Desc": "Perform a free <b>fight</b> action with this operative. If you retain any dice in Roll Attack Dice step of that action, you may perform a strike with any of retained dices before moving to the Resolve Successful Hits step. "
+                }
+            ]
         },
         {
             "Name": "Firstborn Devastator",
