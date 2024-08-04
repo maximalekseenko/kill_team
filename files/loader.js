@@ -26,6 +26,8 @@ function MakeDatacardsDiv(__datacard_data) {
                         $("<td>").html(__datacard_data.Stats.APL),
                         $("<td>").html(__datacard_data.Stats.GA),
                     ),
+                ),
+                $("<table>").addClass("datacard-stats-table").append(
                     $("<tr>").append(
                         $("<td>").html("DF"),
                         $("<td>").html("SV"),

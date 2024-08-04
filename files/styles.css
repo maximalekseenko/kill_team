@@ -91,11 +91,17 @@ body {
     border-top: 2px solid var(--color-orange);
 
     flex-grow: 1;
+    
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 500px) {
     .datacard-header-left {
         width: 100%;
+    }
+    .datacard-header-right{
+        flex-direction: row;
     }
     .datacard-header {
         flex-direction: column;
@@ -120,7 +126,7 @@ body {
 /* Tables */
 .datacard-stats-table {
     width: 100%;
-    height: 100%;
+    height: 50%;
 
     border-collapse: collapse;
 }
