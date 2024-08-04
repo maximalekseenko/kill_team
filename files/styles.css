@@ -62,7 +62,14 @@ body {
     text-align: center;
 }
 
-#content {}
+#content {
+    padding: 10px;
+    max-width: 1000px;;
+    margin: auto;
+}
+@media screen and (max-width: 550px) {#content {
+    min-width: 350px;
+}}
 
 #datacards {
     padding: 10px;
@@ -79,7 +86,7 @@ body {
     border: 2px solid var(--color-orange);
     background-color: var(--color-background);
 
-    width: 550px;
+    width: 100%;
     height: fit-content;
     padding: 0 10px;
     margin: 25px 0;
