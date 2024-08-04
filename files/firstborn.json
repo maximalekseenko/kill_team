@@ -102,7 +102,7 @@
             ],
             "Abilities": [
                 {
-                    "Name": "*Grav:",
+                    "Name": "*Grav",
                     "Desc": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
                 }
             ],
@@ -232,7 +232,7 @@
             ],
             "Abilities": [
                 {
-                    "Name": "*Grav:",
+                    "Name": "*Grav",
                     "Desc": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
                 }
             ],
@@ -281,7 +281,7 @@
             ],
             "Unique_Actions": [
                 {
-                    "Name": "Hammer of Wrath (2AP):",
+                    "Name": "Hammer of Wrath (2AP)",
                     "Desc": "Perform a free <b>fight</b> action with this operative. If you retain any dice in Roll Attack Dice step of that action, you may perform a strike with any of retained dices before moving to the Resolve Successful Hits step. "
                 }
             ]

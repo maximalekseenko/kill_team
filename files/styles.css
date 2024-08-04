@@ -46,6 +46,7 @@
         display: none;
     }
 }
+
 @media screen and (min-width: 550px) {
     .showMobile {
         display: none;
@@ -64,12 +65,16 @@ body {
 
 #content {
     padding: 10px;
-    max-width: 1000px;;
+    max-width: 1000px;
+    ;
     margin: auto;
 }
-@media screen and (max-width: 550px) {#content {
-    min-width: 350px;
-}}
+
+@media screen and (max-width: 550px) {
+    #content {
+        min-width: 350px;
+    }
+}
 
 #datacards {
     padding: 10px;
@@ -144,16 +149,22 @@ body {
 .datacard-tables-bottom {
     margin-bottom: 10px;
     display: flex;
+    flex-wrap: nowrap;
     gap: 10px;
 }
 
-
+@media screen and (max-width: 550px) {
+    .datacard-tables-bottom {
+        flex-wrap: wrap;
+    }
+}
 
 /* Table */
 .table {
+    width: 100%;
+
     font: normal 0.9em 'Roboto';
     border-collapse: collapse;
-    width: 100%;
     height: fit-content;
 }
 

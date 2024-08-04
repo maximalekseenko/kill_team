@@ -97,7 +97,7 @@ function _MakeWeaponRows(__weapon_data) {
 
 function MakeWeaponsTable(__weapons_data) {
 
-    return $("<table>").addClass("table weapon-table").append(
+    return $("<table>").addClass("table weapons-table").append(
         // Make head.
         $("<tbody>").append(
             $("<tr>").append(
@@ -130,6 +130,31 @@ function MakeWeaponsTable(__weapons_data) {
             (_weapon_data) => _MakeWeaponRows(_weapon_data)
         )
     )
+}
+
+
+function MakeAbilitiesTable(__typeOfAbilities, __abilities_data) {
+    return $("<table>")
+    .addClass("abilities-table")
+        .addClass("table")
+        .append(
+            $("<tbody>").append(
+                $("<tr>").append(
+                    $("<td>").html(__typeOfAbilities)
+                )
+            ),
+            __abilities_data.map(
+                (_ability_data) => $("<tbody>").append(
+                    $("<tr>").append(
+                        $("<td>").append(
+                            $("<p>").append(
+                                $("<b>").html(_ability_data.Name), ": ", _ability_data.Desc
+                            ),
+                        ),
+                    )
+                )
+            )
+        );
 }
 
 
@@ -189,50 +214,14 @@ function MakeDatacardsDiv(__datacard_data) {
             $("<div>").addClass('datacard-tables-bottom').append(
 
                 // Abilities.
-                __datacard_data.Abilities.length > 0 ?
-                    $("<table>").addClass("table").append(
-                        $("<tbody>").append(
-                            $("<tr>").append(
-                                $("<td>").html("Abilities")
-                            )
-                        ),
-                        ...__datacard_data.Abilities.map(
-                            (_ability_data) => $("<tbody>").append(
-                                $("<tr>").append(
-                                    $("<td>").append(
-                                        $("<p>").append(
-                                            $("<b>").html(_ability_data.Name), " ",
-                                            _ability_data.Desc
-                                        ),
-                                    ),
-                                )
-                            )
-                        )
-                    ) : undefined,
+                __datacard_data["Abilities"].length > 0 ?
+                    MakeAbilitiesTable("Abilities", __datacard_data["Abilities"])
+                    : undefined,
 
                 // Unique actions.
-                __datacard_data.Unique_Actions.length > 0 ?
-                    $("<table>").addClass("table").append(
-                        $("<tbody>").append(
-                            $("<tr>").append(
-                                $("<td>").html("Unique actions")
-                            )
-                        ),
-                        ...__datacard_data.Unique_Actions.map(
-                            (_ability_data) => $("<tbody>").append(
-                                $("<tr>").append(
-                                    $("<td>").append(
-                                        $("<p>").append(
-                                            $("<b>").html(_ability_data.Name), " ",
-                                            _ability_data.Desc
-                                        ),
-                                    ),
-                                )
-                            )
-                        ),
-                        $("<tbody>")
-                    ) : undefined,
-
+                __datacard_data["Unique_Actions"].length > 0 ?
+                    MakeAbilitiesTable("Unique actions", __datacard_data["Unique_Actions"])
+                    : undefined,
             )
         )
     );
