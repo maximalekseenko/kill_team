@@ -1,0 +1,247 @@
+@import "fonts.css";
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+:root {
+
+    --color-dark-background: black;
+    --color-dark-text: #dadada;
+
+
+    /* --color-background: #dadada;
+    --color-text: #202020;
+
+    --color-table-header-background: #676767;
+    --color-table-header-text: #dadada;
+    --color-table-row-odd-background: #202020;
+    --color-table-row-odd-text: #dadada;
+    --color-table-row-even-background: #3a3a3a;
+    --color-table-row-even-text: #dadada; */
+    
+    --color-background: #eeeeee;
+    --color-text: #000000;
+    --color-table-header-background: #b4bbb4;
+    --color-table-header-text: #202020;
+    --color-table-row-odd-background: #eeeeee;
+    --color-table-row-odd-text: #202020;
+    --color-table-row-even-background: #dee2e1;
+    --color-table-row-even-text: #202020;
+
+    --color-orange: #c54c21;
+
+    --img-table-inv: 0.9;
+}
+
+
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+#content {
+
+}
+
+#datacards {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    column-gap: 30px;
+}
+
+
+
+/* Datacard layout */
+.datacard {
+    border: 2px solid var(--color-orange);
+    background-color: var(--color-background);
+
+    width: 500px;
+    height: fit-content;
+    padding: 0 10px;
+    margin: 25px 0;
+}
+
+
+.datacard-header {
+    margin-top: -15px;
+    margin-bottom: 10px;
+    border: 2px solid var(--color-orange);
+    border-right: none;
+    display: flex;
+}
+
+.datacard-header-left {
+    outline: 2px solid var(--color-orange);
+
+    width: 66%;
+    padding: 5px;
+}
+
+.datacard-header-right {
+    flex-grow: 1;
+    border-collapse: collapse;
+}
+
+
+.datacard-tables {}
+
+.datacard-tables-top {
+    margin-bottom: 10px;
+}
+
+.datacard-tables-bottom {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+/* Tables */
+.datacard-stats-table {
+    width: 100%;
+    height: 100%;
+
+    border-collapse: collapse;
+}
+
+.datacard-stats-table>tr:nth-child(2n-1) {
+    font: normal 1.4em 'Impact';
+    color: var(--color-dark-text);
+    text-align: center;
+
+    background-color: var(--color-orange);
+}
+
+.datacard-stats-table>tr:nth-child(2n) {
+    font: normal 1.2em 'Impact';
+    text-align: center;
+}
+
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    height: fit-content;
+}
+
+.table>tbody {
+    font: normal 0.9em 'Roboto';
+}
+
+.table>tbody:first-child {
+    font: normal 1em 'Impact';
+    color: var(--color-table-header-text);
+    background-color: var(--color-table-header-background);
+
+    text-transform: uppercase;
+    height: 1em;
+}
+
+.table>tbody:nth-child(2n+2) {
+    background-color: var(--color-table-row-odd-background);
+    color: var(--color-table-row-odd-text);
+}
+
+.table>tbody:nth-child(2n+3) {
+    background-color: var(--color-table-row-even-background);
+    color: var(--color-table-row-even-text);
+}
+
+.table>tbody>tr>td {
+    padding: 2px;
+}
+
+.weapon-table {
+    width: 100%;
+}
+.weapon-table>tbody:first-child {
+    text-transform: none;
+}
+
+.weapon-table>tbody>tr>td {
+    text-align: center;
+    width: 5%;
+}
+
+.weapon-table>tbody>tr>td:nth-child(1) {
+    width: 1em;
+}
+
+.weapon-table>tbody>tr>td:nth-child(2) {
+    text-align: left;
+    width: auto;
+}
+
+.weapon-table>tbody>tr>td:nth-last-child(1) {
+    width: 25%;
+}
+
+.weapon-table>tbody>tr>td:nth-last-child(2) {
+    width: 25%;
+}
+
+
+
+/* Colors */
+.dark-background {
+    background-color: var(--color-dark-background);
+    color: var(--color-dark-text);
+}
+
+
+
+/* Texts */
+.name-text {
+    font: normal 1.4em 'Impact';
+    text-transform: uppercase;
+}
+
+.fluff-text {
+    font: italic 0.9em 'Roboto';
+}
+
+
+
+/* Images */
+.f1 {
+    vertical-align: middle;
+    content: url(./f1.png);
+}
+
+.f2 {
+    vertical-align: middle;
+    content: url(./f2.png);
+}
+
+.f3 {
+    vertical-align: middle;
+    content: url(./f3.png);
+}
+
+.f6 {
+    vertical-align: middle;
+    content: url(./f6.png);
+}
+
+.wRanged {
+    filter: invert(var(--img-table-inv));
+    vertical-align: middle;
+    content: url(./wgRanged.png);
+}
+
+.wMelee {
+    filter: invert(var(--img-table-inv));
+    vertical-align: middle;
+    content: url(./wgMelee.png);
+}
