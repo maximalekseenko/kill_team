@@ -24,7 +24,7 @@
     --color-table-row-odd-text: #dadada;
     --color-table-row-even-background: #3a3a3a;
     --color-table-row-even-text: #dadada; */
-    
+
     --color-background: #eeeeee;
     --color-text: #000000;
     --color-table-header-background: #b4bbb4;
@@ -46,15 +46,13 @@ body {
     color: var(--color-text);
 }
 
-#content {
-
-}
+#content {}
 
 #datacards {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     column-gap: 30px;
 }
 
@@ -75,21 +73,33 @@ body {
 .datacard-header {
     margin-top: -15px;
     margin-bottom: 10px;
-    border: 2px solid var(--color-orange);
-    border-right: none;
+
     display: flex;
+    flex-wrap: wrap;
 }
 
 .datacard-header-left {
-    outline: 2px solid var(--color-orange);
+    border: 2px solid var(--color-orange);
 
     width: 66%;
     padding: 5px;
 }
 
 .datacard-header-right {
-    flex-grow: 1;
     border-collapse: collapse;
+    border-bottom: 2px solid var(--color-orange);
+    border-top: 2px solid var(--color-orange);
+
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 500px) {
+    .datacard-header-left {
+        width: 100%;
+    }
+    .datacard-header {
+        flex-direction: column;
+    }
 }
 
 
@@ -165,6 +175,7 @@ body {
 .weapon-table {
     width: 100%;
 }
+
 .weapon-table>tbody:first-child {
     text-transform: none;
 }
