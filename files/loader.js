@@ -29,7 +29,11 @@ function _MakeWeaponStatsRow(__weapon_data) {
         $("<td>").html(__weapon_data["D"])
             .addClass("ct"),
 
-        $("<td>").html(__weapon_data["SR"])
+        $("<td>").html(
+            (__weapon_data["SR"].length ? __weapon_data["SR"].join(", ") : "") +
+            (__weapon_data["SR"].length && __weapon_data["Crit"].length ? ". " : "") +
+            (__weapon_data["Crit"].length ? `<b>!${__weapon_data["Crit"].join(", ")}</b>` : "")
+        )
             .addClass("ct"),
     );
 }
