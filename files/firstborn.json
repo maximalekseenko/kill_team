@@ -5,7 +5,7 @@
             "Name": "Firstborn Sergeant",
             "Fluff": "These grizzled leaders have emerged victorious through countless battles. They are canny individuals, able to pick out the threats and opportunities of battle.",
             "Stats": {
-                "M": "3 <span class='f2'>",
+                "M": "3 <img class='f2'>",
                 "APL": "3",
                 "GA": "1",
                 "DF": "3",
@@ -15,13 +15,26 @@
             "Weapons": [
                 {
                     "Range": "Ranged",
-                    "Name": "Master-crafted bolt pistol",
-                    "A": "5",
+                    "Name": "Sergeant's bolt pistol",
+                    "A": "4",
                     "BS_WS": "2+",
                     "D": "3/4",
                     "SR": [
-                        "Rng <span class='f6'>",
+                        "Rng <img class='f6'>",
                         "Balanced"
+                    ],
+                    "Crit": []
+                },
+                {
+                    "Range": "Ranged",
+                    "Name": "Grav-pistol",
+                    "A": "4",
+                    "BS_WS": "3+",
+                    "D": "3/4",
+                    "SR": [
+                        "Rng <img class='f6'>",
+                        "AP1",
+                        "Grav*"
                     ],
                     "Crit": []
                 },
@@ -36,7 +49,7 @@
                             "BS_WS": "3+",
                             "D": "4/5",
                             "SR": [
-                                "Rng <span class='f6'>",
+                                "Rng <img class='f6'>",
                                 "AP1"
                             ],
                             "Crit": []
@@ -88,14 +101,19 @@
                     "Crit": []
                 }
             ],
-            "Abilities": [],
+            "Abilities": [
+                {
+                    "Name": "*Grav:",
+                    "Desc": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
+                }
+            ],
             "Unique_Actions": []
         },
         {
             "Name": "Firstborn Tactical",
             "Fluff": "Dependable and flexible, Space Marines assigned to Tactical Squads are called upon to fulfil a wide range of battlefield roles. When armed with the boltgun, they can hold ground, provide fire support and unload suppressive salvoes while rapidly advancing.",
             "Stats": {
-                "M": "3 <span class='f2'>",
+                "M": "3 <img class='f2'>",
                 "APL": "3",
                 "GA": "1",
                 "DF": "3",
@@ -129,7 +147,7 @@
             "Name": "Firstborn Tactical Gunner",
             "Fluff": "Space Marines train with countless weapon types in support of their flexible role. Depending on the mission, they wield thermal weapons to melt armour, infantry-roasting flamers or ancient firearms that discharge dangerous energy.",
             "Stats": {
-                "M": "3  <span class='f2'>",
+                "M": "3  <img class='f2'>",
                 "APL": "3",
                 "GA": "1",
                 "DF": "3",
@@ -144,8 +162,8 @@
                     "BS_WS": "2+",
                     "D": "2/2",
                     "SR": [
-                        "Rng <span class='f6'>",
-                        "Torrent <span class='f2'>"
+                        "Rng <img class='f6'>",
+                        "Torrent <img class='f2'>"
                     ],
                     "Crit": []
                 },
@@ -168,7 +186,7 @@
                     "BS_WS": "3+",
                     "D": "6/3",
                     "SR": [
-                        "Rng <span class='f6'>",
+                        "Rng <img class='f6'>",
                         "AP2"
                     ],
                     "Crit": [
@@ -225,7 +243,7 @@
             "Name": "Firstborn Assault",
             "Fluff": "",
             "Stats": {
-                "M": "3 <span class='f2'>",
+                "M": "3 <img class='f2'>",
                 "APL": "3",
                 "GA": "1",
                 "DF": "3",
@@ -240,7 +258,7 @@
                     "BS_WS": "3+",
                     "D": "3/4",
                     "SR": [
-                        "Rng <span class='f6'>"
+                        "Rng <img class='f6'>"
                     ],
                     "Crit": []
                 },
@@ -263,7 +281,7 @@
             "Name": "Firstborn Devastator",
             "Fluff": "Far too large to be wielded by any unaugmented Human, the heaviest weaponry can overturn a tank, demolish signal arrays and obliterate most enemies.",
             "Stats": {
-                "M": "3 <span class='f2'>",
+                "M": "3 <img class='f2'>",
                 "APL": "3",
                 "GA": "1",
                 "DF": "3",
@@ -295,7 +313,10 @@
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "3/5",
-                            "SR": ["Heavy", "Blast <span class='f2'>"],
+                            "SR": [
+                                "Heavy",
+                                "Blast <img class='f2'>"
+                            ],
                             "Crit": []
                         },
                         {
@@ -303,7 +324,10 @@
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "5/7",
-                            "SR": ["Heavy", "AP1"],
+                            "SR": [
+                                "Heavy",
+                                "AP1"
+                            ],
                             "Crit": []
                         }
                     ]
