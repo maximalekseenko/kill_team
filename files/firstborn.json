@@ -25,10 +25,10 @@
                 {
                     "Range": "Ranged",
                     "Name": "Plasma pistol",
-                    "Multy-text": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
-                    "Multy-options": [
+                    "Multi-desc": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
+                    "Multi-options": [
                         {
-                            "Name": "Standard",
+                            "Name": "- Standard",
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "4/5",
@@ -36,7 +36,7 @@
                             "Crit": "-"
                         },
                         {
-                            "Name": "Supercharge",
+                            "Name": "- Supercharge",
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "4/5",
@@ -60,7 +60,7 @@
                     "A": "4",
                     "BS_WS": "3+",
                     "D": "5/7",
-                    "SR": "Bruta",
+                    "SR": "Brutal",
                     "Crit": "-"
                 },
                 {
@@ -152,10 +152,10 @@
                 {
                     "Range": "Ranged",
                     "Name": "Plasma gun",
-                    "Multy-text": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
-                    "Multy-options": [
+                    "Multi-desc": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
+                    "Multi-options": [
                         {
-                            "Name": "Standard",
+                            "Name": "- Standard",
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "5/6",
@@ -163,7 +163,7 @@
                             "Crit": "-"
                         },
                         {
-                            "Name": "Supercharge",
+                            "Name": "- Supercharge",
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "5/6",
@@ -248,10 +248,10 @@
                 {
                     "Range": "Ranged",
                     "Name": "Missile launcher",
-                    "Multy-text": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
-                    "Multy-options": [
+                    "Multi-desc": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
+                    "Multi-options": [
                         {
-                            "Name": "Frag",
+                            "Name": "- Frag",
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "3/5",
@@ -259,7 +259,7 @@
                             "Crit": "-"
                         },
                         {
-                            "Name": "Krak",
+                            "Name": "- Krak",
                             "A": "4",
                             "BS_WS": "3+",
                             "D": "5/7",

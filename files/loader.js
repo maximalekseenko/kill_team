@@ -1,3 +1,135 @@
+function _MakeWeaponMobileRow(__weapon_data) {
+    return $("<tr>").addClass("showMobile").append(
+        $("<td>").addClass(`w${__weapon_data["Range"]}`),
+
+        $("<td>").html(__weapon_data["Name"])
+            .attr("colspan", 5),
+    );
+}
+
+
+
+function _MakeWeaponStatsRow(__weapon_data) {
+    return $("<tr>").append(
+        $("<td>").addClass("showMobile"),
+
+        $("<td>").addClass(`w${__weapon_data["Range"]}`)
+            .addClass("ct")
+            .addClass("hideMobile"),
+
+        $("<td>").html(__weapon_data["Name"])
+            .addClass("hideMobile"),
+
+        $("<td>").html(__weapon_data["A"])
+            .addClass("ct"),
+
+        $("<td>").html(__weapon_data["BS_WS"])
+            .addClass("ct"),
+
+        $("<td>").html(__weapon_data["D"])
+            .addClass("ct"),
+
+        $("<td>").html(__weapon_data["SR"])
+            .addClass("ct"),
+    );
+}
+
+
+
+function _MakeWeaponRows(__weapon_data) {
+
+    // Make multi-option header and body.
+    if (__weapon_data["Multi-options"]) {
+        return $("<tbody>").append(
+
+            // Make mobile header.
+            _MakeWeaponMobileRow(__weapon_data),
+
+            // Make mobile desc.
+            $("<tr>")
+                .addClass("showMobile")
+                .append(
+                    $("<td>").html(__weapon_data["Multi-desc"])
+                        .addClass("desc-text")
+                        .attr("colspan", 6)
+                ),
+
+            // Make non-mobile Row
+            $("<tr>")
+                .addClass("hideMobile")
+                .append(
+                    $("<td>").addClass(`w${__weapon_data["Range"]}`)
+                        .addClass("ct")
+                        .addClass("hideMobile"),
+
+                    $("<td>").html(__weapon_data["Name"])
+                        .addClass("hideMobile"),
+
+                    $("<td>").html(__weapon_data["Multi-desc"])
+                        .addClass("desc-text")
+                        .attr("colspan", 6)
+                ),
+
+            // Make weapon profiles
+            ...__weapon_data["Multi-options"].map(
+                (__weaponProfile_data) => [
+                    _MakeWeaponMobileRow(__weaponProfile_data),
+                    _MakeWeaponStatsRow(__weaponProfile_data)
+                ]
+            )
+        );
+        // Make multi-option body.
+
+    }
+
+    // Normal weapon.
+    else return $("<tbody>").append(
+        _MakeWeaponMobileRow(__weapon_data),
+        _MakeWeaponStatsRow(__weapon_data)
+    );
+}
+
+
+
+function MakeWeaponsTable(__weapons_data) {
+
+    return $("<table>").addClass("table weapon-table").append(
+        // Make head.
+        $("<tbody>").append(
+            $("<tr>").append(
+                $("<td>")
+                    .css("width", "24px")
+                    .addClass("ct"),
+
+                $("<td>").html("Name")
+                    .css("width", "180px")
+                    .addClass("hideMobile"),
+
+                $("<td>").html("A")
+                    .addClass("ct")
+                    .css("width", "42px"),
+
+                $("<td>").html("BS/WS")
+                    .addClass("ct")
+                    .css("width", "42px"),
+
+                $("<td>").html("D")
+                    .addClass("ct")
+                    .css("width", "42px"),
+
+                $("<td>").html("SR")
+                    .addClass("ct")
+            )
+        ),
+        // Make body.
+        ...__weapons_data.map(
+            (_weapon_data) => _MakeWeaponRows(_weapon_data)
+        )
+    )
+}
+
+
+
 function MakeDatacardsDiv(__datacard_data) {
 
     return $("<div>").addClass('datacard').append(
@@ -9,7 +141,7 @@ function MakeDatacardsDiv(__datacard_data) {
             $("<div>").addClass("datacard-header-left dark-background").append(
                 $("<h3>").addClass("name-text")
                     .html(__datacard_data.Name),
-                $("<p>").addClass("fluff-text")
+                $("<p>").addClass("desc-text")
                     .html(__datacard_data.Fluff)
             ),
 
@@ -47,54 +179,7 @@ function MakeDatacardsDiv(__datacard_data) {
             $("<div>").addClass('datacard-tables-top').append(
 
                 // Weapons.
-                $("<table>").addClass("table weapon-table").append(
-                    $("<tbody>").append(
-                        $("<tr>").append(
-                            $("<td>"),
-                            $("<td>").html("Name"),
-                            $("<td>").html("A"),
-                            $("<td>").html("BS/WS"),
-                            $("<td>").html("D"),
-                            $("<td>").html("SR"),
-                            $("<td>").html("!"),
-                        )
-                    ),
-                    ...__datacard_data.Weapons.map(
-                        (_weapon_data) => $("<tbody>").append(
-                            _weapon_data["Multy-options"] ? [
-                                $("<tr>").append(
-                                    $("<td>").html(`<img class="w${_weapon_data.Range}">`),
-                                    $("<td>").html(_weapon_data.Name),
-                                    $("<td>")
-                                        .css("text-align", "left")
-                                        .css("font-style", "italic")
-                                        .attr("colspan", "5")
-                                        .html(_weapon_data["Multy-text"]),
-                                ),
-                                ..._weapon_data["Multy-options"].map(
-                                    (_weapon_profile_data) => $("<tr>").append(
-                                        $("<td>"),
-                                        $("<td>").html('- ' + _weapon_profile_data.Name),
-                                        $("<td>").html(_weapon_profile_data.A),
-                                        $("<td>").html(_weapon_profile_data.BS_WS),
-                                        $("<td>").html(_weapon_profile_data.D),
-                                        $("<td>").html(_weapon_profile_data.SR),
-                                        $("<td>").html(_weapon_profile_data.Crit)
-                                    )
-                                )
-                            ] :
-                                $("<tr>").append(
-                                    $("<td>").html(`<img class="w${_weapon_data.Range}">`),
-                                    $("<td>").html(_weapon_data.Name),
-                                    $("<td>").html(_weapon_data.A),
-                                    $("<td>").html(_weapon_data.BS_WS),
-                                    $("<td>").html(_weapon_data.D),
-                                    $("<td>").html(_weapon_data.SR),
-                                    $("<td>").html(_weapon_data.Crit)
-                                )
-                        )
-                    )
-                )
+                MakeWeaponsTable(__datacard_data.Weapons)
             ),
 
             $("<div>").addClass('datacard-tables-bottom').append(
