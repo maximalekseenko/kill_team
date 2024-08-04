@@ -15,13 +15,12 @@
             "Weapons": [
                 {
                     "Range": "Ranged",
-                    "Name": "Sergeant's bolt pistol",
+                    "Name": "Bolt pistol",
                     "A": "4",
                     "BS_WS": "2+",
                     "D": "3/4",
                     "SR": [
-                        "Rng <img class='f6'>",
-                        "Balanced"
+                        "Rng <img class='f6'>"
                     ],
                     "Crit": []
                 },
