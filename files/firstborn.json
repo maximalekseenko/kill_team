@@ -28,8 +28,8 @@
                     "Range": "Ranged",
                     "Name": "Grav-pistol",
                     "A": "4",
-                    "BS_WS": "3+",
-                    "D": "3/4",
+                    "BS_WS": "2+",
+                    "D": "4/5",
                     "SR": [
                         "Rng <img class='f6'>",
                         "AP1",
@@ -45,8 +45,8 @@
                         {
                             "Name": "- Standard",
                             "A": "4",
-                            "BS_WS": "3+",
-                            "D": "4/5",
+                            "BS_WS": "2+",
+                            "D": "5/6",
                             "SR": [
                                 "Rng <img class='f6'>",
                                 "AP1"
@@ -56,8 +56,8 @@
                         {
                             "Name": "- Supercharge",
                             "A": "4",
-                            "BS_WS": "3+",
-                            "D": "4/5",
+                            "BS_WS": "2+",
+                            "D": "5/6",
                             "SR": [
                                 "AP2",
                                 "Hot"
@@ -69,7 +69,7 @@
                 {
                     "Range": "Melee",
                     "Name": "Chainsword",
-                    "A": "4",
+                    "A": "5",
                     "BS_WS": "2+",
                     "D": "4/5",
                     "SR": [
