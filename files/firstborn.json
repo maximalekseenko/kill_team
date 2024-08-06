@@ -1,8 +1,86 @@
 {
-    "Name": "Firstborn",
+    "Name": "Firstborn Astartes",
+    "Archetype": [
+        "Seek and Destroy",
+        "Security"
+    ],
+    "Operatives": [
+        {
+            "Content": "1 <span class='operative-text'>Astartes Sergeant</span> operative equipped with one option from each of the following:",
+            "Options": [
+                {
+                    "Content": "Bolt pistol, grav-pistol or plasma pistol"
+                },
+                {
+                    "Content": "Chainsword, power fist, power weapon"
+                }
+            ]
+        },
+        {
+            "Content": "3 <span class='operative-text'>Astartes Tactical</span> operatives"
+        },
+        {
+            "Content": "2 <span class='killteam-text'>Firstborn Astartes</span> operatives selected from the following list:",
+            "Options": [
+                {
+                    "Content": "<span class='operative-text'>Astartes Specialist</span> equipped with one of the following:",
+                    "Options": [
+                        {
+                            "Content": "Flamer; fists"
+                        },
+                        {
+                            "Content": "grav-gun; fists"
+                        },
+                        {
+                            "Content": "meltagun; fists"
+                        },
+                        {
+                            "Content": "plasma gun; fists"
+                        }
+                    ]
+                },
+                {
+                    "Content": "<span class='operative-text'>Astartes Assault</span> equipped with one of the following:",
+                    "Options": [
+                        {
+                            "Content": "Bolt pistol; chainsword"
+                        },
+                        {
+                            "Content": "Plasma pistol; chainsword"
+                        },
+                        {
+                            "Content": "Eviscerator chainblade"
+                        }
+                    ]
+                },
+                {
+                    "Content": "<span class='operative-text'>Astartes Devastator</span> equipped with one of the following:",
+                    "Options": [
+                        {
+                            "Content": "Heavy bolter; chainsword"
+                        },
+                        {
+                            "Content": "Missile launcher; chainsword"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Operatives-text": [
+        "Your kill team can only include up to two <span class='operative-text'>Astartes Tactical</span>, <span class='operative-text'>Astartes Assault</span> and <span class='operative-text'>Astartes Devastator</span> operatives each.",
+        "Your kill team can only include <span class='operative-text'>Astartes Sergeant</span> operative once."
+    ],
+    "Ability": [
+        {
+            "Name": "Dramatically optimize web-enabled.",
+            "Desc": "Appropriately envisioneer extensible applications and goal-oriented architectures. Uniquely simplify user friendly opportunities and interactive process improvements. Globally optimize end-to-end strategic theme areas vis-a-vis cost effective leadership. Globally.",
+            "Content": "Completely scale user-centric potentialities with seamless methods of empowerment. Energistically negotiate B2B functionalities via revolutionary collaboration and idea-sharing. Holisticly mesh customer directed best practices rather than maintainable infrastructures. Phosfluorescently initiate distinctive paradigms before equity invested expertise. Synergistically transform."
+        }
+    ],
     "Datacards": [
         {
-            "Name": "Firstborn Sergeant",
+            "Name": "Astartes Sergeant",
             "Fluff": "These grizzled leaders have emerged victorious through countless battles. They are canny individuals, able to pick out the threats and opportunities of battle.",
             "Stats": {
                 "M": "3 <img class='f2'>",
@@ -103,13 +181,13 @@
             "Abilities": [
                 {
                     "Name": "*Grav",
-                    "Desc": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
+                    "Content": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
                 }
             ],
             "Unique_Actions": []
         },
         {
-            "Name": "Firstborn Tactical",
+            "Name": "Astartes Tactical",
             "Fluff": "Dependable and flexible, Space Marines assigned to Tactical Squads are called upon to fulfil a wide range of battlefield roles. When armed with the boltgun, they can hold ground, provide fire support and unload suppressive salvoes while rapidly advancing.",
             "Stats": {
                 "M": "3 <img class='f2'>",
@@ -143,7 +221,7 @@
             "Unique_Actions": []
         },
         {
-            "Name": "Firstborn Tactical Gunner",
+            "Name": "Astartes Specialist",
             "Fluff": "Space Marines train with countless weapon types in support of their flexible role. Depending on the mission, they wield thermal weapons to melt armour, infantry-roasting flamers or ancient firearms that discharge dangerous energy.",
             "Stats": {
                 "M": "3  <img class='f2'>",
@@ -233,13 +311,13 @@
             "Abilities": [
                 {
                     "Name": "*Grav",
-                    "Desc": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
+                    "Content": "Each time this operative makes a <b>shooting attack</b> with this weapon, if the target has an unmodified Save characteristic of 3+ or better, this weapon has the Lethal 4+ special rule for that attack."
                 }
             ],
             "Unique_Actions": []
         },
         {
-            "Name": "Firstborn Assault",
+            "Name": "Astartes Assault",
             "Fluff": "",
             "Stats": {
                 "M": "3 <img class='f2'>",
@@ -262,6 +340,47 @@
                     "Crit": []
                 },
                 {
+                    "Range": "Ranged",
+                    "Name": "Plasma pistol",
+                    "Multi-desc": "Each time this weapon is selected to make a shooting attack with, select one of the profiles below to use:",
+                    "Multi-options": [
+                        {
+                            "Name": "- Standard",
+                            "A": "4",
+                            "BS_WS": "3+",
+                            "D": "5/6",
+                            "SR": [
+                                "Rng <img class='f6'>",
+                                "AP1"
+                            ],
+                            "Crit": []
+                        },
+                        {
+                            "Name": "- Supercharge",
+                            "A": "4",
+                            "BS_WS": "3+",
+                            "D": "5/6",
+                            "SR": [
+                                "AP2",
+                                "Hot"
+                            ],
+                            "Crit": []
+                        }
+                    ]
+                },
+                {
+                    "Range": "Melee",
+                    "Name": "Eviscerator chainblade",
+                    "A": "4",
+                    "BS_WS": "3+",
+                    "D": "5/7",
+                    "SR": [
+                        "Rending",
+                        "Eviscerate*"
+                    ],
+                    "Crit": []
+                },
+                {
                     "Range": "Melee",
                     "Name": "Chainsword",
                     "A": "4",
@@ -275,19 +394,14 @@
             ],
             "Abilities": [
                 {
-                    "Name": "Hasteful Assault",
-                    "Desc": "After this unit fight in combat in which it incapacities an enemy operative, you may move this operative up to <img class='f3'>. This move may end within Engagement Range of an enemy operative."
+                    "Name": "*Eviscerate",
+                    "Content": "If this operative incapacitates an enemy operative with this weapon while performing a <b>Fight</b> action, this operative may move up to <img class='f3'>. This movement ends if this operative enters Engagement Range with an enemy operative."
                 }
             ],
-            "Unique_Actions": [
-                {
-                    "Name": "Hammer of Wrath (2AP)",
-                    "Desc": "Perform a free <b>fight</b> action with this operative. If you retain any dice in Roll Attack Dice step of that action, you may perform a strike with any of retained dices before moving to the Resolve Successful Hits step. "
-                }
-            ]
+            "Unique_Actions": []
         },
         {
-            "Name": "Firstborn Devastator",
+            "Name": "Astartes Devastator",
             "Fluff": "Far too large to be wielded by any unaugmented Human, the heaviest weaponry can overturn a tank, demolish signal arrays and obliterate most enemies.",
             "Stats": {
                 "M": "3 <img class='f2'>",

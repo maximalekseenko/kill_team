@@ -40,7 +40,7 @@
 }
 
 
-
+/* Tools */
 @media screen and (max-width: 550px) {
     .hideMobile {
         display: none;
@@ -53,20 +53,19 @@
     }
 }
 
+.ct {
+    text-align: center;
+}
+
 
 body {
     background-color: var(--color-background);
     color: var(--color-text);
 }
 
-.ct {
-    text-align: center;
-}
-
 #content {
     padding: 10px;
     max-width: 1000px;
-    ;
     margin: auto;
 }
 
@@ -76,7 +75,33 @@ body {
     }
 }
 
-#datacards {
+#content .archetype {
+    font: normal 1.4em 'Impact';
+    color: var(--color-dark-text);
+    text-transform: uppercase;
+
+    background-color: var(--color-orange);
+    padding: 2px 6px;
+}
+
+#content .killteam-container {
+    padding: 10px 10px 20px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 550px) {
+    #content .killteam-container {
+        flex-direction: column;
+    }
+}
+
+#content .killteam-container>*>* {
+    margin-bottom: 20px;
+}
+
+#content #datacards {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -84,10 +109,8 @@ body {
     column-gap: 30px;
 }
 
-
-
 /* Datacard layout */
-.datacard {
+#content .datacard {
     border: 2px solid var(--color-orange);
     background-color: var(--color-background);
 
@@ -98,7 +121,7 @@ body {
 }
 
 
-.datacard-header {
+#content .datacard-header {
     margin-top: -15px;
     margin-bottom: 10px;
 
@@ -106,14 +129,14 @@ body {
     flex-wrap: wrap;
 }
 
-.datacard-header-left {
+#content .datacard-header-left {
     border: 2px solid var(--color-orange);
 
     width: 66%;
     padding: 5px;
 }
 
-.datacard-header-right {
+#content .datacard-header-right {
     border-collapse: collapse;
     border-bottom: 2px solid var(--color-orange);
     border-top: 2px solid var(--color-orange);
@@ -125,28 +148,28 @@ body {
 }
 
 @media screen and (max-width: 550px) {
-    .datacard-header-left {
+    #content .datacard-header-left {
         width: 100%;
     }
 
-    .datacard-header-right {
+    #content .datacard-header-right {
         flex-direction: row;
         height: fit-content;
     }
 
-    .datacard-header {
+    #content .datacard-header {
         flex-direction: column;
     }
 }
 
 
-.datacard-tables {}
+#content .datacard-tables {}
 
-.datacard-tables-top {
+#content .datacard-tables-top {
     margin-bottom: 10px;
 }
 
-.datacard-tables-bottom {
+#content .datacard-tables-bottom {
     margin-bottom: 10px;
     display: flex;
     flex-wrap: nowrap;
@@ -154,7 +177,7 @@ body {
 }
 
 @media screen and (max-width: 550px) {
-    .datacard-tables-bottom {
+    #content .datacard-tables-bottom {
         flex-wrap: wrap;
     }
 }
@@ -197,17 +220,39 @@ body {
     padding: 3px 6px;
 }
 
-
-
-/* Datacard stats table */
-.datacard-stats-table {
-    width: 100%;
-    height: 50%;
-
-    border-collapse: collapse;
+ul li {
+    margin-bottom: 1em;
 }
 
-.datacard-stats-table>tr:nth-child(2n-1) {
+ul ul li {
+    margin: 0;
+}
+
+ul {
+    list-style-image: url("./RedTriangle.png");
+    padding-inline-start: 20px;
+}
+
+ul ul {
+    list-style-image: url("./RedCircle.png");
+    padding-inline-start: 20px;
+}
+
+ul ul ul {
+    list-style-image: url("./RedEmptyCircle.png");
+    padding-inline-start: 20px;
+}
+
+ul ul ul ul {
+    list-style-image: url("./RedEmptyCircleSmall.png");
+    padding-inline-start: 20px;
+}
+
+
+
+/* Stats table */
+#content .stats-table>:nth-child(2n-1) {
+    /* Stats table header row */
     font: normal 1.4em 'Impact';
     color: var(--color-dark-text);
     text-align: center;
@@ -215,29 +260,69 @@ body {
     background-color: var(--color-orange);
 }
 
-.datacard-stats-table>tr:nth-child(2n) {
-    font: normal 1.2em 'Impact';
+#content .stats-table>:nth-child(2n) {
+    /* Stats table body row */
+    font: normal 1.2em 'Roboto';
     text-align: center;
+
+    background-color: var(--color-background);
 }
 
 
 
 /* Colors */
-.dark-background {
+#content .dark-background {
     background-color: var(--color-dark-background);
     color: var(--color-dark-text);
 }
 
 
-.name-text {
-    font: normal 1.4em 'Impact';
-    text-transform: uppercase;
+
+/* Text */
+p {
+    font: normal 1em 'Roboto';
+    padding: 0;
+    margin-bottom: 0.25em;
 }
 
-.desc-text {
+h1 {
+    font: normal 2em 'Impact';
+    color: var(--color-orange);
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font: normal 1.7em 'Impact';
+    color: var(--color-orange);
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font: normal 1.4em 'Impact';
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+#content .desc-text {
     font: italic 0.9em 'Roboto';
 }
 
+#content .operative-text {
+    font-family: 'Impact';
+    text-transform: uppercase;
+}
+
+span.killteam-text {
+    font-family: 'Impact';
+    color: var(--color-orange);
+    text-transform: uppercase;
+}
+
+span.killteam-text:after {
+    content: url("./fskull.png");
+}
 
 
 /* Images */
