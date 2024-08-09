@@ -11,7 +11,7 @@
 
 :root {
 
-    --color-dark-background: black;
+    --color-dark-background: #010101;
     --color-dark-text: #dadada;
 
 
@@ -24,6 +24,15 @@
     --color-table-row-odd-text: #dadada;
     --color-table-row-even-background: #3a3a3a;
     --color-table-row-even-text: #dadada;
+
+
+    --color-dark: #010101;
+    --color-light: #dadada;
+
+    --color-tac_ops: #6d7d72;
+    --color-strategic_ploy: #515a5c;
+    --color-tactical_ploy: #010101;
+
 
     /* --color-background: #eeeeee;
     --color-text: #000000;
@@ -53,6 +62,29 @@
     }
 }
 
+.rowMobile {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 550px) {
+    .rowMobile {
+        flex-direction: row;
+    }
+}
+
+.columnMobile {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 550px) {
+    .columnMobile {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .ct {
     text-align: center;
 }
@@ -64,7 +96,7 @@ body {
 }
 
 #content {
-    padding: 10px;
+    padding: 16px;
     max-width: 1000px;
     margin: auto;
 }
@@ -75,118 +107,138 @@ body {
     }
 }
 
-#content .archetype {
+#content>* {
+    margin-bottom: 24px;
+}
+
+
+/* Killteam */
+#killteam .archetype {
     font: normal 1.4em 'Impact';
-    color: var(--color-dark-text);
+    color: var(--color-light);
     text-transform: uppercase;
 
     background-color: var(--color-orange);
-    padding: 2px 6px;
+    padding: 4px 8px;
 }
 
-#content .killteam-container {
-    padding: 10px 10px 20px 10px;
+#killteam .killteam-container {
     display: flex;
-    flex-direction: row;
+    column-gap: 16px;
+    background-color: var(--color-dark);
+    padding: 8px 16px;
+}
+
+#killteam .killteam-container>* {
+    min-width: 50%;
+}
+
+#killteam .killteam-container>*>*>*>li {
+    margin-bottom: 24px;
+}
+
+#killteam .killteam-container ul {
+    list-style-image: url("./RedTriangle.png");
+}
+
+#killteam .killteam-container ul ul {
+    list-style-image: url("./RedCircle.png");
+}
+
+#killteam .killteam-container ul ul ul {
+    list-style-image: url("./RedEmptyCircle.png");
+}
+
+#killteam .killteam-container ul ul ul ul {
+    list-style-image: url("./RedEmptyCircleSmall.png");
 }
 
 
-@media screen and (max-width: 550px) {
-    #content .killteam-container {
-        flex-direction: column;
-    }
-}
-
-#content .killteam-container>*>* {
-    margin-bottom: 20px;
-}
-
-#content #datacards {
-    padding: 10px;
+/* Ploys */
+#ploys {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 30px;
+    column-gap: 16px;
+    padding: 8px 16px;
+}
+#ploys>* {
+    min-width: 50%;
 }
 
-/* Datacard layout */
-#content .datacard {
+
+/* Datacards */
+
+#datacards .datacard {
     border: 2px solid var(--color-orange);
     background-color: var(--color-background);
 
     width: 100%;
     height: fit-content;
-    padding: 0 10px;
-    margin: 25px 0;
+    padding: 0 16px;
+
+    margin-top: 16px;
+    margin-bottom: 32px;
 }
 
-
-#content .datacard-header {
-    margin-top: -15px;
-    margin-bottom: 10px;
-
-    display: flex;
-    flex-wrap: wrap;
+#datacards .datacard>* {
+    margin-bottom: 8px;
 }
 
-#content .datacard-header-left {
+#datacards .datacard .datacard-header {
+    margin-top: -16px;
+}
+
+#datacards .datacard .datacard-header-left {
     border: 2px solid var(--color-orange);
+    background-color: var(--color-dark);
 
     width: 66%;
-    padding: 5px;
+    padding: 4px 8px;
 }
 
-#content .datacard-header-right {
+#datacards .datacard .datacard-header-left>* {
+    color: var(--color-light);
+}
+
+#datacards .datacard .datacard-header-right {
     border-collapse: collapse;
     border-bottom: 2px solid var(--color-orange);
     border-top: 2px solid var(--color-orange);
 
     flex-grow: 1;
-
-    display: flex;
-    flex-direction: column;
 }
 
 @media screen and (max-width: 550px) {
-    #content .datacard-header-left {
+    #datacards .datacard .datacard-header-left {
         width: 100%;
     }
+}
 
-    #content .datacard-header-right {
-        flex-direction: row;
-        height: fit-content;
-    }
+#datacards .datacard .stats-table>:nth-child(2n-1) td {
+    /* Stats table header row */
+    font: normal 1.4em 'Impact';
+    color: var(--color-light);
+    text-align: center;
 
-    #content .datacard-header {
-        flex-direction: column;
-    }
+    background-color: var(--color-orange);
+}
+
+#datacards .datacard .stats-table>:nth-child(2n) td {
+    /* Stats table body row */
+    font: normal 1.2em 'Roboto';
+    text-align: center;
 }
 
 
-#content .datacard-tables {}
-
-#content .datacard-tables-top {
-    margin-bottom: 10px;
-}
-
-#content .datacard-tables-bottom {
-    margin-bottom: 10px;
+#datacards .datacard .datacard-abilities-tables {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
+    column-gap: 16px;
 }
 
-@media screen and (max-width: 550px) {
-    #content .datacard-tables-bottom {
-        flex-wrap: wrap;
-    }
-}
 
 /* Table */
 .table {
     width: 100%;
 
-    font: normal 0.9em 'Roboto';
     border-collapse: collapse;
     height: fit-content;
 }
@@ -217,57 +269,61 @@ body {
 
 .table td {
     /* Table any cell */
+    font: normal 0.9em 'Roboto';
     padding: 3px 6px;
 }
 
-ul li {
-    margin-bottom: 1em;
-}
 
-ul ul li {
-    margin: 0;
+/* List */
+ul li p {
+    margin-bottom: 4px;
 }
 
 ul {
-    list-style-image: url("./RedTriangle.png");
-    padding-inline-start: 20px;
-}
-
-ul ul {
     list-style-image: url("./RedCircle.png");
     padding-inline-start: 20px;
 }
 
-ul ul ul {
+ul ul {
     list-style-image: url("./RedEmptyCircle.png");
-    padding-inline-start: 20px;
 }
 
-ul ul ul ul {
+ul ul ul {
     list-style-image: url("./RedEmptyCircleSmall.png");
-    padding-inline-start: 20px;
 }
 
 
-
-/* Stats table */
-#content .stats-table>:nth-child(2n-1) {
-    /* Stats table header row */
-    font: normal 1.4em 'Impact';
-    color: var(--color-dark-text);
-    text-align: center;
-
-    background-color: var(--color-orange);
+/* Content */
+.content>* {
+    margin-bottom: 24px;
 }
 
-#content .stats-table>:nth-child(2n) {
-    /* Stats table body row */
+
+/* Card */
+.card>:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.card>:first-child>* {
     font: normal 1.2em 'Roboto';
-    text-align: center;
-
-    background-color: var(--color-background);
+    color: var(--color-light);
+    text-transform: uppercase;
+    margin: 3px 6px
 }
 
+.card .color-tactical_ploy-header {
+    background-color: var(--color-tactical_ploy);
+}
+
+.card .strategic_ploy-header {
+    background-color: var(--color-strategic_ploy);
+}
+
+.card .tactical_ploy-header {
+    background-color: var(--color-tactical_ploy);
+}
 
 
 /* Colors */
@@ -282,7 +338,7 @@ ul ul ul ul {
 p {
     font: normal 1em 'Roboto';
     padding: 0;
-    margin-bottom: 0.25em;
+    margin-bottom: 16px;
 }
 
 h1 {
@@ -301,28 +357,30 @@ h2 {
 
 h3 {
     font: normal 1.4em 'Impact';
+    color: var(--color-orange);
     text-transform: uppercase;
     margin-bottom: 0.5em;
 }
 
-#content .desc-text {
+.desc-text {
     font: italic 0.9em 'Roboto';
 }
 
-#content .operative-text {
+.operative-text {
     font-family: 'Impact';
     text-transform: uppercase;
 }
 
-span.killteam-text {
+.killteam-text {
     font-family: 'Impact';
     color: var(--color-orange);
     text-transform: uppercase;
 }
 
-span.killteam-text:after {
+.killteam-text:after {
     content: url("./fskull.png");
 }
+
 
 
 /* Images */

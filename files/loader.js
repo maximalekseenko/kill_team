@@ -1,3 +1,43 @@
+function _MakeContentText(__content_text) {
+    return $("<p>").html(__content_text)
+}
+
+function _MakeContentList(__content_list) {
+    return $("<ul>").append(
+        __content_list.map(_content_list_el =>
+            $("<li>").append(
+                $("<p>").html(_content_list_el["Text"]),
+                _content_list_el["Options"] ? _MakeContentList(_content_list_el["Options"])
+                    : undefined
+            )
+        )
+    )
+}
+
+function _MakeContentWeapon(__content_el) {
+
+}
+
+function MakeContent(__content) {
+    return $("<div>")
+        .addClass("content")
+        .append(
+            __content.map(_content_el => {
+
+                // Determine content type
+                // > Text
+                if (typeof (_content_el) === "string")
+                    return _MakeContentText(_content_el)
+
+                // > List
+                if (Array.isArray(_content_el))
+                    return _MakeContentList(_content_el)
+            })
+        )
+}
+
+
+
 function _MakeWeaponMobileRow(__weapon_data) {
     return $("<tr>").addClass("showMobile").append(
         $("<td>").addClass(`w${__weapon_data["Range"]}`),
@@ -220,137 +260,132 @@ function MakeAbilitiesTable(__typeOfAbilities, __abilities_data) {
 
 function MakeDatacardsDiv(__datacard_data) {
 
-    return $("<div>").addClass('datacard').append(
+    return $("<div>")
+        .addClass('datacard')
+        .append(
 
-        // Make header.
-        $("<div>").addClass('datacard-header').append(
+            // Make header.
+            $("<div>")
+                .addClass('datacard-header')
+                .addClass('columnMobile')
+                .append(
 
-            // Name and fluff.
-            $("<div>").addClass("datacard-header-left dark-background").append(
-                $("<h3>").addClass("name-text")
-                    .html(__datacard_data.Name),
-                $("<p>").addClass("desc-text")
-                    .html(__datacard_data.Fluff)
-            ),
+                    // Name and fluff.
+                    $("<div>")
+                        .addClass("datacard-header-left")
+                        .append(
+                            $("<h3>")
+                                .addClass("operative-text")
+                                .html(__datacard_data.Name),
+                            $("<p>")
+                                .addClass("desc-text")
+                                .html(__datacard_data.Fluff)
+                        ),
 
-            // Stats.
-            $("<div>").addClass("datacard-header-right").append(
-                $("<table>")
-                    .addClass("table")
-                    .addClass("stats-table")
-                    .append(
-                        $("<tbody>")
-                            .addClass("showMobile")
-                            .append(
-                                $("<tr>").append(
-                                    $("<td>").html("M"),
-                                    $("<td>").html("APL"),
-                                    $("<td>").html("GA"),
-                                    $("<td>").html("DF"),
-                                    $("<td>").html("SV"),
-                                    $("<td>").html("W"),
-                                ),
-                            ),
-                        $("<tbody>")
-                            .addClass("showMobile")
-                            .append(
-                                $("<tr>").append(
-                                    $("<td>").html(__datacard_data.Stats.M),
-                                    $("<td>").html(__datacard_data.Stats.APL),
-                                    $("<td>").html(__datacard_data.Stats.GA),
-                                    $("<td>").html(__datacard_data.Stats.DF),
-                                    $("<td>").html(__datacard_data.Stats.SV),
-                                    $("<td>").html(__datacard_data.Stats.W),
+                    // Stats.
+                    $("<div>")
+                        .addClass("datacard-header-right")
+                        .append(
+                            $("<table>")
+                                .addClass("table")
+                                .addClass("stats-table")
+                                .append(
+                                    $("<tbody>")
+                                        .addClass("showMobile")
+                                        .append(
+                                            $("<tr>").append(
+                                                $("<td>").html("M"),
+                                                $("<td>").html("APL"),
+                                                $("<td>").html("GA"),
+                                                $("<td>").html("DF"),
+                                                $("<td>").html("SV"),
+                                                $("<td>").html("W"),
+                                            ),
+                                        ),
+                                    $("<tbody>")
+                                        .addClass("showMobile")
+                                        .append(
+                                            $("<tr>").append(
+                                                $("<td>").html(__datacard_data.Stats.M),
+                                                $("<td>").html(__datacard_data.Stats.APL),
+                                                $("<td>").html(__datacard_data.Stats.GA),
+                                                $("<td>").html(__datacard_data.Stats.DF),
+                                                $("<td>").html(__datacard_data.Stats.SV),
+                                                $("<td>").html(__datacard_data.Stats.W),
+                                            )
+                                        ),
+                                    $("<tbody>")
+                                        .addClass("hideMobile")
+                                        .append(
+                                            $("<tr>").append(
+                                                $("<td>").html("M"),
+                                                $("<td>").html("APL"),
+                                                $("<td>").html("GA"),
+                                            ),
+                                        ),
+                                    $("<tbody>")
+                                        .addClass("hideMobile")
+                                        .append(
+                                            $("<tr>").append(
+                                                $("<td>").html(__datacard_data.Stats.M),
+                                                $("<td>").html(__datacard_data.Stats.APL),
+                                                $("<td>").html(__datacard_data.Stats.GA),
+                                            )
+                                        ),
+                                    $("<tbody>")
+                                        .addClass("hideMobile")
+                                        .append(
+                                            $("<tr>").append(
+                                                $("<td>").html("DF"),
+                                                $("<td>").html("SV"),
+                                                $("<td>").html("W"),
+                                            ),
+                                        ),
+                                    $("<tbody>")
+                                        .addClass("hideMobile")
+                                        .append(
+                                            $("<tr>").append(
+                                                $("<td>").html(__datacard_data.Stats.DF),
+                                                $("<td>").html(__datacard_data.Stats.SV),
+                                                $("<td>").html(__datacard_data.Stats.W),
+                                            )
+                                        ),
                                 )
-                            ),
-                        $("<tbody>")
-                            .addClass("hideMobile")
-                            .append(
-                                $("<tr>").append(
-                                    $("<td>").html("M"),
-                                    $("<td>").html("APL"),
-                                    $("<td>").html("GA"),
-                                ),
-                            ),
-                        $("<tbody>")
-                            .addClass("hideMobile")
-                            .append(
-                                $("<tr>").append(
-                                    $("<td>").html(__datacard_data.Stats.M),
-                                    $("<td>").html(__datacard_data.Stats.APL),
-                                    $("<td>").html(__datacard_data.Stats.GA),
-                                )
-                            ),
-                        $("<tbody>")
-                            .addClass("hideMobile")
-                            .append(
-                                $("<tr>").append(
-                                    $("<td>").html("DF"),
-                                    $("<td>").html("SV"),
-                                    $("<td>").html("W"),
-                                ),
-                            ),
-                        $("<tbody>")
-                            .addClass("hideMobile")
-                            .append(
-                                $("<tr>").append(
-                                    $("<td>").html(__datacard_data.Stats.DF),
-                                    $("<td>").html(__datacard_data.Stats.SV),
-                                    $("<td>").html(__datacard_data.Stats.W),
-                                )
-                            ),
-                    )
-            )
-        ),
+                        )
+                ),
 
-        // Make tables.
-        $("<div>")
-            .addClass('datacard-tables')
-            .append(
-                $("<div>")
-                    .addClass('datacard-tables-top')
-                    .append(
+            // Make Weapons tables.
+            MakeWeaponsTable(__datacard_data.Weapons),
 
-                        // Weapons.
-                        MakeWeaponsTable(__datacard_data.Weapons)
-                    ),
+            // Make other tables.
+            $("<div>")
+                .addClass('datacard-abilities-tables')
+                .addClass('columnMobile')
+                .append(
 
-                $("<div>")
-                    .addClass('datacard-tables-bottom')
-                    .append(
+                    // Abilities.
+                    __datacard_data["Abilities"].length > 0 ?
+                        MakeAbilitiesTable("Abilities", __datacard_data["Abilities"])
+                        : undefined,
 
-                        // Abilities.
-                        __datacard_data["Abilities"].length > 0 ?
-                            MakeAbilitiesTable("Abilities", __datacard_data["Abilities"])
-                            : undefined,
-
-                        // Unique actions.
-                        __datacard_data["Unique_Actions"].length > 0 ?
-                            MakeAbilitiesTable("Unique actions", __datacard_data["Unique_Actions"])
-                            : undefined,
-                    )
-            )
-    );
+                    // Unique actions.
+                    __datacard_data["Unique_Actions"].length > 0 ?
+                        MakeAbilitiesTable("Unique actions", __datacard_data["Unique_Actions"])
+                        : undefined,
+                )
+        );
 }
 
 
 
-function _MakeOperativesListObject(__operatives_list_object) {
+function MakeOperativesListObject(__operatives_list_object) {
     return $("<li>").append(
         $("<p>").html(__operatives_list_object["Content"]),
         __operatives_list_object["Options"] != undefined ?
             $("<ul>").append(
-                __operatives_list_object["Options"].map(__operative_object => _MakeOperativesListObject(__operative_object))
+                __operatives_list_object["Options"].map(__operative_object => MakeOperativesListObject(__operative_object))
             ) : undefined
     )
-}
-
-
-function MakeOperativesListDiv(__operatives_list) {
-    return $("<ul>").append(
-        __operatives_list.map(__operative_object => _MakeOperativesListObject(__operative_object))
-    )
-    // RedTriangle.png
 }
 
 
@@ -370,29 +405,86 @@ $(() => {
 
             $("<div>")
                 .addClass("killteam-container")
-                .addClass("dark-background")
+                .addClass("columnMobile")
                 .append(
-                    $("<div>")
-                        .append(
-                            $("<h2>").html("Operatives"),
 
-                            MakeOperativesListDiv(kt_data["Operatives"]),
+                    // Operatives.
+                    $("<div>").append(
+                        $("<h2>").html("Operatives"),
+                        MakeContent(kt_data["Operatives"])
+                    ),
 
-                            kt_data["Operatives-text"].map(_operatives_text_p_text => $("<p>").html(_operatives_text_p_text))
-                        ),
-                    kt_data["Ability"].length ?
-                        $("<div>")
-                            .append(
-                                $("<h2>").html("Ability"),
-                                $("<p>").html(`Below, you will find common abilities of the <span class="killteam-text">${kt_data[""]}</span> team.`),
+                    // Ability.
+                    kt_data["Ability"].length ? $("<div>").append(
+                        $("<h2>").html("Ability"),
 
-                                MakeOperativesListDiv(kt_data["Operatives"]),
+                        $("<p>").html(`Below, you will find common abilities of the <span class="killteam-text">${kt_data[""]}</span> team.`),
 
-                                kt_data["Operatives-text"].map(_operatives_text_p_text => $("<p>").html(_operatives_text_p_text))
+                        kt_data["Ability"].map(
+                            _ability_data => $("<span>").append(
+                                $("<h3>").html(_ability_data["Name"]),
+                                MakeContent(_ability_data["Content"])
                             )
+                        ),
+
+                    )
                         : undefined
                 )
         );
+
+        $("#tac_ops");
+
+        $("#ploys")
+            .addClass("columnMobile")
+            .append(
+                $("<div>").append(
+                    $("<h2>").html("Strategic Ploys"),
+
+                    $("<p>").html(`If your faction is <span class='killteam-text'>${kt_data["Name"]}</span>, you can use the following Strategic Ploys during a game.`),
+
+                    kt_data["Strategic_Ploys"].map(_ploy =>
+                        $("<div>")
+                            .addClass("card")
+                            .append(
+                                $("<div>")
+                                    .addClass("strategic_ploy-header")
+                                    .append(
+                                        $("<h3>").html(_ploy["Name"]),
+                                        $("<p>").append(
+                                            $("<span>").append(_ploy["Cost"]),
+                                            "CP",
+                                        )
+                                    ),
+
+                                MakeContent(_ploy["Content"])
+                            )
+                    )
+                ),
+
+                $("<div>").append(
+                    $("<h2>").html("Tactical Ploys"),
+
+                    $("<p>").html(`If your faction is <span class='killteam-text'>${kt_data["Name"]}</span>, you can use the following Tactical Ploys during a game.`),
+
+                    kt_data["Tactical_Ploys"].map(_ploy =>
+                        $("<div>")
+                            .addClass("card")
+                            .append(
+                                $("<div>")
+                                    .addClass("tactical_ploy-header")
+                                    .append(
+                                        $("<h3>").html(_ploy["Name"]),
+                                        $("<p>").append(
+                                            $("<span>").append(_ploy["Cost"]),
+                                            "CP",
+                                        )
+                                    ),
+
+                                MakeContent(_ploy["Content"])
+                            )
+                    )
+                )
+            );
 
         // datacards
         $("#datacards").append(

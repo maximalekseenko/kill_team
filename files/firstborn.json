@@ -5,77 +5,153 @@
         "Security"
     ],
     "Operatives": [
+        [
+            {
+                "Text": "1 <span class='operative-text'>Astartes Sergeant</span> operative equipped with one option from each of the following:",
+                "Options": [
+                    {
+                        "Text": "Bolt pistol, grav-pistol or plasma pistol"
+                    },
+                    {
+                        "Text": "Chainsword, power fist, power weapon"
+                    }
+                ]
+            },
+            {
+                "Text": "3 <span class='operative-text'>Astartes Tactical</span> operatives"
+            },
+            {
+                "Text": "2 <span class='killteam-text'>Firstborn Astartes</span> operatives selected from the following list:",
+                "Options": [
+                    {
+                        "Text": "<span class='operative-text'>Astartes Specialist</span> equipped with one of the following:",
+                        "Options": [
+                            {
+                                "Text": "Flamer; fists"
+                            },
+                            {
+                                "Text": "grav-gun; fists"
+                            },
+                            {
+                                "Text": "meltagun; fists"
+                            },
+                            {
+                                "Text": "plasma gun; fists"
+                            }
+                        ]
+                    },
+                    {
+                        "Text": "<span class='operative-text'>Astartes Assault</span> equipped with one of the following:",
+                        "Options": [
+                            {
+                                "Text": "Bolt pistol; chainsword"
+                            },
+                            {
+                                "Text": "Plasma pistol; chainsword"
+                            },
+                            {
+                                "Text": "Eviscerator chainblade"
+                            }
+                        ]
+                    },
+                    {
+                        "Text": "<span class='operative-text'>Astartes Devastator</span> equipped with one of the following:",
+                        "Options": [
+                            {
+                                "Text": "Heavy bolter; chainsword"
+                            },
+                            {
+                                "Text": "Missile launcher; chainsword"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Your kill team can only include up to two <span class='operative-text'>Astartes Specialist</span>, <span class='operative-text'>Astartes Assault</span> and <span class='operative-text'>Astartes Devastator</span> operatives combined.",
+        "Your kill team can only include <span class='operative-text'>Astartes Sergeant</span> operative once."
+    ],
+    "Ability": [],
+    "Tac_Ops": [
         {
-            "Content": "1 <span class='operative-text'>Astartes Sergeant</span> operative equipped with one option from each of the following:",
-            "Options": [
-                {
-                    "Content": "Bolt pistol, grav-pistol or plasma pistol"
-                },
-                {
-                    "Content": "Chainsword, power fist, power weapon"
-                }
+            "Name": "Dramatically optimize web-enabled.",
+            "Contents": [
+                "Appropriately envisioneer extensible applications and goal-oriented architectures. Uniquely simplify user friendly opportunities and interactive process improvements. Globally optimize end-to-end strategic theme areas vis-a-vis cost effective leadership. Globally.",
+                "Completely scale user-centric potentialities with seamless methods of empowerment. Energistically negotiate B2B functionalities via revolutionary collaboration and idea-sharing. Holisticly mesh customer directed best practices rather than maintainable infrastructures. Phosfluorescently initiate distinctive paradigms before equity invested expertise. Synergistically transform."
             ]
         },
         {
-            "Content": "3 <span class='operative-text'>Astartes Tactical</span> operatives"
+            "Name": "Continually scale.",
+            "Contents": [
+                "Intrinsicly whiteboard synergistic supply chains with client-focused testing procedures. Holisticly transform premier results with one-to-one manufactured products. Continually conceptualize principle-centered data via.",
+                "Proactively underwhelm strategic methodologies after transparent schemas. Seamlessly repurpose competitive systems and high-payoff architectures. Credibly evisculate B2C systems via end-to-end customer service. Enthusiastically utilize."
+            ]
         },
         {
-            "Content": "2 <span class='killteam-text'>Firstborn Astartes</span> operatives selected from the following list:",
-            "Options": [
-                {
-                    "Content": "<span class='operative-text'>Astartes Specialist</span> equipped with one of the following:",
-                    "Options": [
-                        {
-                            "Content": "Flamer; fists"
-                        },
-                        {
-                            "Content": "grav-gun; fists"
-                        },
-                        {
-                            "Content": "meltagun; fists"
-                        },
-                        {
-                            "Content": "plasma gun; fists"
-                        }
-                    ]
-                },
-                {
-                    "Content": "<span class='operative-text'>Astartes Assault</span> equipped with one of the following:",
-                    "Options": [
-                        {
-                            "Content": "Bolt pistol; chainsword"
-                        },
-                        {
-                            "Content": "Plasma pistol; chainsword"
-                        },
-                        {
-                            "Content": "Eviscerator chainblade"
-                        }
-                    ]
-                },
-                {
-                    "Content": "<span class='operative-text'>Astartes Devastator</span> equipped with one of the following:",
-                    "Options": [
-                        {
-                            "Content": "Heavy bolter; chainsword"
-                        },
-                        {
-                            "Content": "Missile launcher; chainsword"
-                        }
-                    ]
-                }
+            "Name": "Objectively.",
+            "Contents": [
+                "Conveniently engineer flexible web services without user friendly partnerships. Holisticly enable client-based users for turnkey core competencies. Assertively matrix business intellectual capital whereas functionalized results. Distinctively initiate.",
+                "Phosfluorescently utilize high standards in infrastructures for sticky bandwidth. Intrinsicly synergize goal-oriented synergy through scalable web-readiness. Collaboratively supply team driven applications before process-centric content. Professionally simplify top-line architectures rather."
             ]
         }
     ],
-    "Operatives-text": [
-        "Your kill team can only include up to two <span class='operative-text'>Astartes Tactical</span>, <span class='operative-text'>Astartes Assault</span> and <span class='operative-text'>Astartes Devastator</span> operatives each.",
-        "Your kill team can only include <span class='operative-text'>Astartes Sergeant</span> operative once."
-    ],
-    "Ability": [
+    "Strategic_Ploys": [
         {
-            "Name": "Dramatically optimize web-enabled.",
-            "Desc": "Appropriately envisioneer extensible applications and goal-oriented architectures. Uniquely simplify user friendly opportunities and interactive process improvements. Globally optimize end-to-end strategic theme areas vis-a-vis cost effective leadership. Globally.",
-            "Content": "Completely scale user-centric potentialities with seamless methods of empowerment. Energistically negotiate B2B functionalities via revolutionary collaboration and idea-sharing. Holisticly mesh customer directed best practices rather than maintainable infrastructures. Phosfluorescently initiate distinctive paradigms before equity invested expertise. Synergistically transform."
+            "Name": "Bolter Discipline",
+            "Cost": 1,
+            "Content": [
+                "Until the end of the Turning Point, each time a friendly <span class='killteam-text'>Firstborn Astartes</span> operative is activated, if it does not perform a <b>Fight</b> action during that activation, it can perform two <b>Shoot</b> actions during that activation if a bolt weapon is selected for each of those shooting attacks. A bolt weapon is a ranged weapon that includes ‘bolt’ in its name, e.g. boltgun, heavy bolter etc."
+            ]
+        },
+        {
+            "Name": "Shock Assault",
+            "Cost": 1,
+            "Content": [
+                "Until the end of the Turning Point, each time a friendly <span class='killteam-text'>Firstborn Astartes</span> operative is activated, if it does not perform a <b>Shoot</b> action during that activation, it can perform two <b>Fight</b> actions during that activation."
+            ]
+        },
+        {
+            "Name": "Combat Doctrines",
+            "Cost": 1,
+            "Content": [
+                "Select one of the following Doctrines. Selected doctrine will be active until the end of the Turning Point. While Doctrine is active, friendly <span class='killteam-text'>Firstborn Astartes</span> operative's weapons gain balanced Special Rule while:",
+                [
+                    {
+                        "Text": "<b>Devastator Doctrine:</b> That operative is making a shooting attack against an enemy operative more than <span class='f6'></span> from it."
+                    },
+                    {
+                        "Text": "<b>Tactical Doctrine:</b> That operative is making a shooting attack against an enemy operative less than <span class='f6'></span> from it."
+                    },
+                    {
+                        "Text": "<b>Assault Doctrine:</b> That operative is fighting in combat."
+                    }
+                ]
+            ]
+        }
+    ],
+    "Tactical_Ploys": [
+        {
+            "Name": "Only in Death Does Duty End",
+            "Cost": 2,
+            "Content": [
+                "Use this Tactical Ploy when a ready friendly <span class='killteam-text'>Firstborn Astartes</span> operative is incapacitated. Before removing that operative from the killzone, place a Last Stand token under its base. Next rules apply to Last Stand token:",
+                [
+                    {
+                        "Text": "Last Stand token may capture points and tokens as if it had an APL of 3."
+                    },
+                    {
+                        "Text": "Enemy operatives within <span class='f1'></span> of Last Stand token are considered to be in Engagement Range."
+                    }
+                ],
+                "Remove Last Stand token at the start of the next Turning Point or the end of the battle (whichever comes first)."
+            ]
+        },
+        {
+            "Name": "No Mercy, No Respite",
+            "Cost": 1,
+            "Content": [
+                "Use this Tactical Ploy when is your turn to activate an operative and you do not have any ready operatives left to activate. Select one friendly <span class='killteam-text'>Firstborn Astartes</span> operative, that operative may perform two <b>Overwatch</b> actions during this Turning Point."
+            ]
         }
     ],
     "Datacards": [
@@ -373,12 +449,13 @@
                     "Name": "Eviscerator chainblade",
                     "A": "4",
                     "BS_WS": "3+",
-                    "D": "5/7",
+                    "D": "4/5",
                     "SR": [
-                        "Rending",
                         "Eviscerate*"
                     ],
-                    "Crit": []
+                    "Crit": [
+                        "Rending"
+                    ]
                 },
                 {
                     "Range": "Melee",
@@ -395,7 +472,7 @@
             "Abilities": [
                 {
                     "Name": "*Eviscerate",
-                    "Content": "If this operative incapacitates an enemy operative with this weapon while performing a <b>Fight</b> action, this operative may move up to <img class='f3'>. This movement ends if this operative enters Engagement Range with an enemy operative."
+                    "Content": "If this operative incapacitates an enemy operative with this weapon during activation in which it performed a <b>Charge</b> action, this operative may perform one additional <b>Charge</b> action during that activation."
                 }
             ],
             "Unique_Actions": []
@@ -468,5 +545,51 @@
             "Abilities": [],
             "Unique_Actions": []
         }
-    ]
+    ],
+    "Equipment": [
+        {
+            "Name": "Frag grenade",
+            "Content": [
+                {
+                    "Type": "weapon",
+                    "Range": "Ranged",
+                    "Name": "Frag grenade",
+                    "A": "4",
+                    "BS_WS": "3+",
+                    "D": "2/3",
+                    "SR": [
+                        "Rng <img class='f6'>",
+                        "Limited",
+                        "Blast <img class='f2'>",
+                        "Indirect"
+                    ],
+                    "Crit": []
+                }
+            ]
+        },
+        {
+            "Name": "Frag grenade",
+            "Content": {
+                "Type": "weapon",
+                "Range": "Ranged",
+                "Name": "Frag grenade",
+                "A": "4",
+                "BS_WS": "3+",
+                "D": "2/3",
+                "SR": [
+                    "Rng <img class='f6'>",
+                    "Limited",
+                    "Blast <img class='f2'>",
+                    "Indirect"
+                ],
+                "Crit": []
+            }
+        },
+        {}
+    ],
+    "Battle_Honours": [],
+    "Rare_Equipment": [],
+    "Strategic_Assets": [],
+    "Requisitions_Assets": [],
+    "Spec_Ops": []
 }
