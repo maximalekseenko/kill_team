@@ -71,27 +71,31 @@
         "Your kill team can only include up to two <span class='operative-text'>Astartes Specialist</span>, <span class='operative-text'>Astartes Assault</span> and <span class='operative-text'>Astartes Devastator</span> operatives combined.",
         "Your kill team can only include <span class='operative-text'>Astartes Sergeant</span> operative once."
     ],
-    "Ability": [],
+    "Ability": [
+        {
+            "Name": "bolt weapon",
+            "Content": [
+                "Some rules in this army list refer to a ‘bolt weapon’. A bolt weapon is a ranged weapon that includes ‘bolt’ in its name, e.g. boltgun, heavy bolter etc."
+            ]
+        }
+    ],
     "Tac_Ops": [
         {
-            "Name": "Dramatically optimize web-enabled.",
+            "Name": "THE EMPEROR’S RETRIBUTION.",
             "Contents": [
-                "Appropriately envisioneer extensible applications and goal-oriented architectures. Uniquely simplify user friendly opportunities and interactive process improvements. Globally optimize end-to-end strategic theme areas vis-a-vis cost effective leadership. Globally.",
-                "Completely scale user-centric potentialities with seamless methods of empowerment. Energistically negotiate B2B functionalities via revolutionary collaboration and idea-sharing. Holisticly mesh customer directed best practices rather than maintainable infrastructures. Phosfluorescently initiate distinctive paradigms before equity invested expertise. Synergistically transform."
+                "Point recupture"
             ]
         },
         {
-            "Name": "Continually scale.",
+            "Name": "HONOUR YOUR CHAPTER.",
             "Contents": [
-                "Intrinsicly whiteboard synergistic supply chains with client-focused testing procedures. Holisticly transform premier results with one-to-one manufactured products. Continually conceptualize principle-centered data via.",
-                "Proactively underwhelm strategic methodologies after transparent schemas. Seamlessly repurpose competitive systems and high-payoff architectures. Credibly evisculate B2C systems via end-to-end customer service. Enthusiastically utilize."
+                "Melee "
             ]
         },
         {
-            "Name": "Objectively.",
+            "Name": "LIGHTNING STRIKE.",
             "Contents": [
-                "Conveniently engineer flexible web services without user friendly partnerships. Holisticly enable client-based users for turnkey core competencies. Assertively matrix business intellectual capital whereas functionalized results. Distinctively initiate.",
-                "Phosfluorescently utilize high standards in infrastructures for sticky bandwidth. Intrinsicly synergize goal-oriented synergy through scalable web-readiness. Collaboratively supply team driven applications before process-centric content. Professionally simplify top-line architectures rather."
+                "Kill on enemy zone"
             ]
         }
     ],
@@ -100,7 +104,7 @@
             "Name": "Bolter Discipline",
             "Cost": 1,
             "Content": [
-                "Until the end of the Turning Point, each time a friendly <span class='killteam-text'>Firstborn Astartes</span> operative is activated, if it does not perform a <b>Fight</b> action during that activation, it can perform two <b>Shoot</b> actions during that activation if a bolt weapon is selected for each of those shooting attacks. A bolt weapon is a ranged weapon that includes ‘bolt’ in its name, e.g. boltgun, heavy bolter etc."
+                "Until the end of the Turning Point, each time a friendly <span class='killteam-text'>Firstborn Astartes</span> operative is activated, if it does not perform a <b>Fight</b> action during that activation, it can perform two <b>Shoot</b> actions during that activation if a bolt weapon is selected for each of those shooting attacks."
             ]
         },
         {
@@ -549,7 +553,9 @@
     "Equipment": [
         {
             "Name": "Frag grenade",
+            "Cost": 2,
             "Content": [
+                "The operative is equipped with the following ranged weapon for the battle:",
                 {
                     "Type": "weapon",
                     "Range": "Ranged",
@@ -568,24 +574,49 @@
             ]
         },
         {
-            "Name": "Frag grenade",
-            "Content": {
-                "Type": "weapon",
-                "Range": "Ranged",
-                "Name": "Frag grenade",
-                "A": "4",
-                "BS_WS": "3+",
-                "D": "2/3",
-                "SR": [
-                    "Rng <img class='f6'>",
-                    "Limited",
-                    "Blast <img class='f2'>",
-                    "Indirect"
-                ],
-                "Crit": []
-            }
+            "Name": "Krak grenade",
+            "Cost": 3,
+            "Content": [
+                "The operative is equipped with the following ranged weapon for the battle. It cannot make a shooting attack with this weapon by performing an Overwatch action:",
+                {
+                    "Type": "weapon",
+                    "Range": "Ranged",
+                    "Name": "Krak grenade",
+                    "A": "4",
+                    "BS_WS": "3+",
+                    "D": "2/3",
+                    "SR": [
+                        "Rng <img class='f6'>",
+                        "Limited",
+                        "Blast <img class='f2'>",
+                        "Indirect"
+                    ],
+                    "Crit": []
+                }
+            ]
         },
-        {}
+        {
+            "Name": "Combat knife",
+            "": 1,
+            "Content": []
+        },
+        {
+            "Name": "ORBITAL BOMBARDMENT<sub>+</sub>",
+            "Cost": 3,
+            "Content": [
+                "The operative is equipped with the following ranged weapon for the battle:"
+            ]
+        },
+        {
+            "Name": "Auspex<sub>+</sub>",
+            "": 3,
+            "Content": []
+        },
+        {
+            "Name": "Narthecium<sub>+</sub>",
+            "": 3,
+            "Content": []
+        }
     ],
     "Battle_Honours": [],
     "Rare_Equipment": [],
